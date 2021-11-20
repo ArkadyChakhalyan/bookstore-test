@@ -1,0 +1,49 @@
+.container {
+    background: rgb(245, 245, 245);
+    width: 246px;
+    height: 400px;
+    margin: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 56px 32px 24px 32px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+.category, .author {
+    color: rgb(131, 131, 131);
+    font-size: 10pt;
+    font-weight: normal;
+}
+
+.author {
+    margin-top: -8px;
+}
+
+.category {
+    text-decoration: underline;
+    margin-bottom: 4px;
+}
+
+.title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.image {
+    align-self: center;
+    width: 160px;
+    height: 247px;
+    background-size: 160px 247px;
+    box-shadow: 10px 10px 16px 0px rgba(0, 0, 0, 0.4);
+}
