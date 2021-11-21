@@ -1,6 +1,6 @@
 import { StrictMode } from 'react';
 import { Provider } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter as Router}  from 'react-router-dom';
 import { App } from './components/app/app';
 import { store } from './store';
 import ReactDOM from 'react-dom';
@@ -11,9 +11,9 @@ ReactDOM.render(
   <StrictMode>
     <Provider store={store}>
       <ErrorBoundry>
-        <BrowserRouter>
+        <Router>
           <App />
-        </BrowserRouter>
+        </Router>
       </ErrorBoundry>
     </Provider>
   </StrictMode>,
