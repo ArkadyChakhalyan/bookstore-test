@@ -1,7 +1,6 @@
 import { useState, ChangeEvent, KeyboardEvent, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useMatch } from 'react-router';
-import { useSearchParams } from 'react-router-dom';
 import { clearData, clearSearch, fetchBooksTC, onFirstSearch } from '../../actions/actions';
 import BookstoreService from '../../services/bookstore-service';
 import { StateType } from '../../types';
@@ -16,8 +15,6 @@ export const Header = () => {
     const booksLoaded = useSelector((state: StateType) => state.books.booksLoaded);
 
     const dispatch = useDispatch();
-
-    let [searchParams, setSearchParams] = useSearchParams();
     
     const [searchTerm, setSearchTerm] = useState('');
     const [sortBy, setSortBy] = useState('relevance');
@@ -31,8 +28,6 @@ export const Header = () => {
             sortBy: sortBy,
             startAt: '0'
         };
-        
-        setSearchParams(search);
         
         dispatch(clearData());
         dispatch(fetchBooksTC(bookstoreService, search));

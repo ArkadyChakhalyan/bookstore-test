@@ -92,7 +92,7 @@
 
     .left {
         padding: 32px 0;
-        width: 100vw;
+        min-width: 100vw;
         min-height: none;
     }
 
@@ -116,6 +116,14 @@
         width: 256px;
         height: 396px;
         background-size: 256px 396px;
+    }
+
+    .right {
+        padding: 16px 32px;
+    }
+
+    .container {
+        min-width: 100px
     }
 
 }

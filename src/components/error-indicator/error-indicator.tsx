@@ -7,11 +7,11 @@ type ErrorIndicatorPropsTypes = {
 
 export const ErrorIndicator = ({ setError }: ErrorIndicatorPropsTypes ) => {
 
-    const history = useNavigate();
+    const navigate = useNavigate();
 
     const onClick = () => {
         setError();
-        history('/');
+        navigate('/');
     };
 
     return (

@@ -100,3 +100,21 @@ i {
         margin-top: 16px;
     }
 }
+
+@media only screen and (max-width: 480px) {
+
+    .input {
+        width: 280px;
+    }
+
+    .sorting {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .categories+.sortby {
+        margin-left: 0px;
+        margin-top: 16px;
+    }
+}

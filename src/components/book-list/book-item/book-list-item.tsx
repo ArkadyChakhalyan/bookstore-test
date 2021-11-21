@@ -1,4 +1,3 @@
-//@ts-ignore
 import { useNavigate } from 'react-router-dom';
 import { BookType } from '../../../types';
 import styles from './book-list-item.module.css';
@@ -11,11 +10,11 @@ export const BookListItem = ({ book }: BookListItemPropsType) => {
 
     const { title, categories, authors, image, id } = book;
 
-    const history = useNavigate();
+    const navigate = useNavigate();
 
     const onClick = (id: string) => {
         const path = `/${id}`;
-        history(path);
+        navigate(path);
     };
 
     const authorList = authors.join(' / ');

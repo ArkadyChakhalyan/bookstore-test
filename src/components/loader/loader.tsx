@@ -1,10 +1,10 @@
-import './loader.css';
+import styles from './loader.module.css';
 
 export const Loader = () => {
     return (
-        <div className="loadingio-spinner-rolling-liig12v7lb">
-            <div className="ldio-hd6l29vdydb">
-                <div></div>
+        <div className={styles.outside}>
+            <div className={styles.inside}>
+                <div />
             </div>
         </div>
     );

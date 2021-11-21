@@ -29,11 +29,11 @@ export const App = () => {
             element: bookList,
         },
         {
-            path: ':id',
+            path: '/:id',
             element: <BookPage 
                 books={booksLoaded}
                 bookId={id} />
-        },
+        }
     ];
 
     let elements = useRoutes(routes);
@@ -45,3 +45,4 @@ export const App = () => {
         </div>
     );
 };
+
