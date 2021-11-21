@@ -33,10 +33,6 @@ export const App = () => {
             element: <BookPage 
                 books={booksLoaded}
                 bookId={id} />
-        },
-        {
-            path: '*',
-            element: bookList
         }
     ];
 
