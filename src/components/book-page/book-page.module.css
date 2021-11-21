@@ -51,6 +51,7 @@
     padding: 8px 32px;
     height: 202px;
     max-width: 640px;
+    min-width: 520px;
 }
 
 .description {
@@ -72,6 +73,18 @@
     font-size: 12pt;
 }
 
+@media only screen and (max-width: 1400px) {
+    .container {
+        min-width: 420px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .container {
+        min-width: 300px;
+    }
+}
+
 @media only screen and (max-width: 1024px) {
     .page {
         flex-direction: column;
@@ -87,7 +100,6 @@
         height: 396px;
         background-size: 256px 396px;
     }
-
 }
 
 @media only screen and (max-width: 600px) {

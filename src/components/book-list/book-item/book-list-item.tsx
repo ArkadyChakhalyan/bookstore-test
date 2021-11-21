@@ -18,6 +18,8 @@ export const BookListItem = ({ book }: BookListItemPropsType) => {
         history(path);
     };
 
+    const authorList = authors.join(' / ');
+
     return (
         <div
             className={styles.container}
@@ -31,7 +33,7 @@ export const BookListItem = ({ book }: BookListItemPropsType) => {
                     {title}
                 </p>
                 <p className={styles.author}>
-                    {authors[0]}
+                    {authorList}
                 </p>
             </div>
         </div>

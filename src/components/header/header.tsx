@@ -1,5 +1,6 @@
 import { useState, ChangeEvent, KeyboardEvent, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useMatch } from 'react-router';
 import { clearData, clearSearch, fetchBooksTC, onFirstSearch } from '../../actions/actions';
 import BookstoreService from '../../services/bookstore-service';
 import { StateType } from '../../types';
@@ -32,8 +33,10 @@ export const Header = () => {
         dispatch(onFirstSearch(search));
     };
 
+    const match = useMatch('/:id');
+
     useEffect(() => {
-        if (booksLoaded.length > 0) {
+        if (booksLoaded.length > 0 && !match) {
             onSubmit();
         };
     }, [sortBy, category]);

@@ -29,7 +29,7 @@ export default class BookstoreService {
         return await res.json();
     };
 
-    getBooks = async (search: SearchType) => { 
+    getBooks = async (search: SearchType) => {
 
         const { searchTerm, sortBy, category, startAt } = search;
 
@@ -41,14 +41,14 @@ export default class BookstoreService {
         };
     };
 
-    _transformBook = (book: any): BookType => { 
+    _transformBook = (book: any): BookType => {
         return {
             id: book.id,
-            authors: book.volumeInfo.authors || ['N/a'],
-            title: book.volumeInfo.title || 'N/a',
-            categories: book.volumeInfo.categories || ['N/a'],
-            description: book.volumeInfo.description || 'N/a',
-            image: book.volumeInfo.imageLinks.thumbnail || 'N/a'
+            authors: book.volumeInfo.authors || [''],
+            title: book.volumeInfo.title || '',
+            categories: book.volumeInfo.categories || [''],
+            description: book.volumeInfo.description || '',
+            image: book.volumeInfo.imageLinks.thumbnail || ''
         };
     };
 };
