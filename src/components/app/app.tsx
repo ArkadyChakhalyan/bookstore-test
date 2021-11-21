@@ -29,10 +29,14 @@ export const App = () => {
             element: bookList
         },
         {
-            path: '/:id',
+            path: ':id',
             element: <BookPage 
                 books={booksLoaded}
                 bookId={id} />
+        },
+        {
+            path: '*',
+            element: bookList
         }
     ];
 
