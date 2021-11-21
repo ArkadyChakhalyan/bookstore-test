@@ -26,7 +26,7 @@ export const App = () => {
     const routes: RouteObject[] = [ 
         {
             path: '/',
-            element: bookList
+            element: bookList,
         },
         {
             path: ':id',

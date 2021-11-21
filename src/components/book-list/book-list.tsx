@@ -21,11 +21,11 @@ export const BookList = () => {
 
         const search = {
             ...currentSearch,
-            startAt: booksLoaded.length
+            startAt: booksLoaded.length.toString()
         };
 
         dispatch(fetchBooksTC(bookstoreService, search));
-        dispatch(onContinueSearch(booksLoaded.length));
+        dispatch(onContinueSearch(booksLoaded.length.toString()));
     };
 
     const loadMore = loading ? <Loader /> :
@@ -51,7 +51,9 @@ export const BookList = () => {
                     })
                 }
             </ul>
-            {booksLoaded.length >= booksFound ? null : loadMore}
+            <div className={styles.load}>
+                {booksLoaded.length >= booksFound ? null : loadMore}
+            </div>
         </div>
     );
 };

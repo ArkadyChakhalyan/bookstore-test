@@ -18,10 +18,10 @@ export const BookPage = ({ books, bookId }: BookPagePropsType) => {
     const categoryList = categories.join(' / ');
     const authorList = authors.join(' / ');
 
-    const history = useNavigate();
+    const navigate = useNavigate();
 
     const onClick = () => {
-        history('/');
+        navigate(-1);
     };
 
     return (

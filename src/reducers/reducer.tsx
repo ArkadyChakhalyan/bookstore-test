@@ -9,7 +9,7 @@ const initialState: StateType = {
         searchTerm: '',
         category: 'all',
         sortBy: 'relevance',
-        startAt: 0
+        startAt: '0'
     },
     loading: false,
     error: null
@@ -76,7 +76,7 @@ const onFirstSearch = (state: StateType, payload: SearchType) => {
     };
 };
 
-const onContinueSearch = (state: StateType, payload: number) => {
+const onContinueSearch = (state: StateType, payload: string) => {
     return {
         ...state,
         currentSearch: {
@@ -93,7 +93,7 @@ const onClearSearch = (state: StateType) => {
             searchTerm: '',
             category: 'all',
             sortBy: 'relevance',
-            startAt: 0
+            startAt: '0'
         }
     };
 };

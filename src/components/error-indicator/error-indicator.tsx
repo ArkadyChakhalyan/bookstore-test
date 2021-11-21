@@ -1,11 +1,16 @@
 import { useNavigate } from 'react-router';
 import styles from './error-indicator.module.css';
 
-export const ErrorIndicator = () => {
+type ErrorIndicatorPropsTypes = {
+    setError: Function
+}
+
+export const ErrorIndicator = ({ setError }: ErrorIndicatorPropsTypes ) => {
 
     const history = useNavigate();
 
     const onClick = () => {
+        setError();
         history('/');
     };
 

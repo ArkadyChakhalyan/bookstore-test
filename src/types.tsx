@@ -18,7 +18,7 @@ export type SearchType = {
     searchTerm: string
     category: string
     sortBy: string
-    startAt: number
+    startAt: string
 }
 
 export type StateType = {

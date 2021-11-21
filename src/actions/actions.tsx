@@ -34,7 +34,7 @@ const onFirstSearch = (search: SearchType) => {
     } as const;
 };
 
-const onContinueSearch = (startAt: number) => {
+const onContinueSearch = (startAt: string) => {
     return {
         type: 'ON_CONTINUE_SEARCH',
         payload: startAt

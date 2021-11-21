@@ -9,6 +9,11 @@
     padding: 56px 32px 24px 32px;
 }
 
+.container:hover {
+    cursor: pointer;
+    box-shadow: 4px 4px 8px 1px rgba(0, 0, 0, 0.4);
+}
+
 .info {
     display: flex;
     flex-direction: column;

@@ -32,6 +32,12 @@
     margin-top: 16px;
 }
 
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .label {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1em;
@@ -60,6 +66,8 @@
 }
 
 .button {
+    border: none;
+    background: none;
     position: absolute;
     top: 0%;
     right: 0%;
@@ -68,11 +76,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
+    cursor: pointer;
 }
 
 i {
-    cursor: pointer;
     transform: scale(1.2);
 }
 

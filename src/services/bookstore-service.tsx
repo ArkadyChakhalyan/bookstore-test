@@ -7,7 +7,7 @@ export default class BookstoreService {
 
     _pagination = 30;
 
-    getResource = async (searchTerm: string, sortBy?: string, startAt?: number, category?: string) => {
+    getResource = async (searchTerm: string, sortBy?: string, startAt?: string, category?: string) => {
 
         const { _apiBase, _pagination } = this;
 
