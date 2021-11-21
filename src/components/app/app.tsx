@@ -34,10 +34,6 @@ export const App = () => {
                 books={booksLoaded}
                 bookId={id} />
         },
-        {
-            path: '*',
-            element: bookList
-        }
     ];
 
     let elements = useRoutes(routes);

@@ -12,7 +12,7 @@ export const ErrorIndicator = () => {
     return (
         <div className={styles.error}>
             <p className={styles.title}>Error!</p>
-            <p>Something went wrong</p>
+            <p>Something went wrong, try again!</p>
             <button
                 className={styles.button}
                 onClick={onClick} >
