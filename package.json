@@ -2,7 +2,7 @@
   "name": "bookstore-test",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://arkadychakhalyan.github.io/bookstore",
+  "homepage": "http://arkadychakhalyan.github.io/bookstore-test",
   "dependencies": {
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^11.2.7",
