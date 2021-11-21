@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/bookstore-test/static/css/main.7d878502.chunk.css",
-    "main.js": "/bookstore-test/static/js/main.5e594e66.chunk.js",
-    "main.js.map": "/bookstore-test/static/js/main.5e594e66.chunk.js.map",
+    "main.css": "/bookstore-test/static/css/main.82a9499d.chunk.css",
+    "main.js": "/bookstore-test/static/js/main.d952fb99.chunk.js",
+    "main.js.map": "/bookstore-test/static/js/main.d952fb99.chunk.js.map",
     "runtime-main.js": "/bookstore-test/static/js/runtime-main.dfa11266.js",
     "runtime-main.js.map": "/bookstore-test/static/js/runtime-main.dfa11266.js.map",
-    "static/js/2.6b64b561.chunk.js": "/bookstore-test/static/js/2.6b64b561.chunk.js",
-    "static/js/2.6b64b561.chunk.js.map": "/bookstore-test/static/js/2.6b64b561.chunk.js.map",
+    "static/js/2.3c8e78c8.chunk.js": "/bookstore-test/static/js/2.3c8e78c8.chunk.js",
+    "static/js/2.3c8e78c8.chunk.js.map": "/bookstore-test/static/js/2.3c8e78c8.chunk.js.map",
     "index.html": "/bookstore-test/index.html",
-    "static/css/main.7d878502.chunk.css.map": "/bookstore-test/static/css/main.7d878502.chunk.css.map",
-    "static/js/2.6b64b561.chunk.js.LICENSE.txt": "/bookstore-test/static/js/2.6b64b561.chunk.js.LICENSE.txt"
+    "static/css/main.82a9499d.chunk.css.map": "/bookstore-test/static/css/main.82a9499d.chunk.css.map",
+    "static/js/2.3c8e78c8.chunk.js.LICENSE.txt": "/bookstore-test/static/js/2.3c8e78c8.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.dfa11266.js",
-    "static/js/2.6b64b561.chunk.js",
-    "static/css/main.7d878502.chunk.css",
-    "static/js/main.5e594e66.chunk.js"
+    "static/js/2.3c8e78c8.chunk.js",
+    "static/css/main.82a9499d.chunk.css",
+    "static/js/main.d952fb99.chunk.js"
   ]
 }
