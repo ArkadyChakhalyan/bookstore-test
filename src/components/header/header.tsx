@@ -8,12 +8,10 @@ import styles from './header.module.css';
 
 const bookstoreService = new BookstoreService();
 
-type CategoryType = 'all' | 'biography' | 'computers' | 'histyory' | 'medical' | 'poetry'
-type SortByType = 'relevance' | 'newest'
-
 export const Header = () => {
 
     const loading = useSelector((state: StateType) => state.loading);
+    const booksLoaded = useSelector((state: StateType) => state.books.booksLoaded);
 
     const dispatch = useDispatch();
 
@@ -35,8 +33,14 @@ export const Header = () => {
     };
 
     useEffect(() => {
+        if (booksLoaded.length > 0) {
+            onSubmit();
+        };
+    }, [sortBy, category]);
+
+    useEffect(() => {
         dispatch(clearSearch());
-    }, [searchTerm, sortBy, category, dispatch]);
+    }, [searchTerm, dispatch]);
 
     const onKeyPress = (e: KeyboardEvent<HTMLDivElement>) => {
         if(e.key === 'Enter') onSubmit();

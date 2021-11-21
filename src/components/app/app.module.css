@@ -5,7 +5,8 @@
     align-items: center;
     min-width: 320px;
     min-height: 400px;
-    height: 100vh;
+    height: calc(100vh - 200px);
+    padding-top: 200px;
 }
 
 .start {

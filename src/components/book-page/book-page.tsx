@@ -9,9 +9,9 @@ type BookPagePropsType = {
 
 export const BookPage = ({ books, bookId }: BookPagePropsType) => {
 
-    const book: any = books.find((item) => {
+    const book: BookType = books.find((item) => {
         return item.id === bookId;
-    });
+    })!;
 
     const { title, image, categories, authors, description } = book;
     

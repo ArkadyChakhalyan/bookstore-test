@@ -5,7 +5,6 @@ import styles from './book-list.module.css';
 import { fetchBooksTC, onContinueSearch } from '../../actions/actions';
 import BookstoreService from '../../services/bookstore-service';
 import { BookListItem } from './book-item/book-list-item';
-import { useEffect } from 'react';
 
 const bookstoreService = new BookstoreService();
 
@@ -16,8 +15,6 @@ export const BookList = () => {
     const booksLoaded = useSelector((state: StateType) => state.books.booksLoaded);
     const currentSearch = useSelector((state: StateType) => state.currentSearch);
 
-    const search = useSelector((state: StateType) => state.currentSearch);
-
     const dispatch = useDispatch();
 
     const onClick = () => {
@@ -25,15 +22,11 @@ export const BookList = () => {
         const search = {
             ...currentSearch,
             startAt: booksLoaded.length
-        }
+        };
 
         dispatch(fetchBooksTC(bookstoreService, search));
         dispatch(onContinueSearch(booksLoaded.length));
     };
-
-    useEffect(() => {
-        return () => {};
-    }, [search])
 
     const loadMore = loading ? <Loader /> :
         (
