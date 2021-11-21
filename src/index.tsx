@@ -11,7 +11,7 @@ ReactDOM.render(
   <StrictMode>
     <Provider store={store}>
       <ErrorBoundry>
-        <Router>
+        <Router basename='/bookstore-test'>
           <App />
         </Router>
       </ErrorBoundry>
