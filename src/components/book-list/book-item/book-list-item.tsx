@@ -1,20 +1,17 @@
-import { useNavigate } from 'react-router-dom';
 import { BookType } from '../../../types';
 import styles from './book-list-item.module.css';
 
 type BookListItemPropsType = {
-    book: BookType
+    book: BookType,
+    setPage: Function
 }
 
-export const BookListItem = ({ book }: BookListItemPropsType) => {
+export const BookListItem = ({ book, setPage }: BookListItemPropsType) => {
 
-    const { title, categories, authors, image, id } = book;
+    const { title, categories, authors, image } = book;
 
-    const navigate = useNavigate();
-
-    const onClick = (id: string) => {
-        const path = `/${id}`;
-        navigate(path);
+    const onClick = () => {
+        setPage(book);
     };
 
     const authorList = authors.join(' / ');
@@ -22,7 +19,7 @@ export const BookListItem = ({ book }: BookListItemPropsType) => {
     return (
         <div
             className={styles.container}
-            onClick={() => onClick(id)} >
+            onClick={() => onClick()} >
             <div className={styles.image} style={{ backgroundImage: `url(${image})` }} />
             <div className={styles.info}>
                 <p className={styles.category}>

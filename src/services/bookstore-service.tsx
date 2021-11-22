@@ -32,12 +32,16 @@ export default class BookstoreService {
     getBooks = async (search: SearchType) => {
 
         const { searchTerm, sortBy, category, startAt } = search;
+        const { getResource, _transformBook } = this;
 
-        const res = await this.getResource(searchTerm, sortBy, startAt, category);
+
+        const res = await getResource(searchTerm, sortBy, startAt, category);
         
         return {
             booksFound: res.totalItems,
-            booksLoaded: res.items.map(this._transformBook)
+            booksLoaded: res.items.map((item: any) => {
+                return _transformBook(item);
+            })
         };
     };
 

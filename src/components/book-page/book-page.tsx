@@ -1,34 +1,25 @@
-import { useNavigate } from 'react-router';
 import { BookType } from '../../types';
 import styles from './book-page.module.css';
 
 type BookPagePropsType = {
-    books: BookType[]
-    bookId: string
+    book: BookType
+    goBack: Function
 }
 
-export const BookPage = ({ books, bookId }: BookPagePropsType) => {
+export const BookPage = ({ book, goBack }: BookPagePropsType) => {
 
-    const book: BookType = books.find((item) => {
-        return item.id === bookId;
-    })!;
+    window.scrollTo(0,0);
 
     const { title, image, categories, authors, description } = book;
     
     const categoryList = categories.join(' / ');
     const authorList = authors.join(' / ');
 
-    const navigate = useNavigate();
-
-    const onClick = () => {
-        navigate(-1);
-    };
-
     return (
         <div className={styles.page} >
             <button
                 className={styles.button}
-                onClick={onClick} >
+                onClick={() => goBack()} >
                 <i className='fas fa-angle-left fa-2x' />
                 <p className={styles.buttonText} >back</p>
             </button>

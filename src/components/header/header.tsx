@@ -1,6 +1,6 @@
 import { useState, ChangeEvent, KeyboardEvent, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useMatch } from 'react-router';
+import { useSearchParams } from 'react-router-dom';
 import { clearData, clearSearch, fetchBooksTC, onFirstSearch } from '../../actions/actions';
 import BookstoreService from '../../services/bookstore-service';
 import { StateType } from '../../types';
@@ -20,6 +20,8 @@ export const Header = () => {
     const [sortBy, setSortBy] = useState('relevance');
     const [category, setCategory] = useState('all');
 
+    const [searchParams, setSearchParams] = useSearchParams();
+
     const onSubmit = () => {
 
         const search = {
@@ -28,22 +30,23 @@ export const Header = () => {
             sortBy: sortBy,
             startAt: '0'
         };
+
+        setSearchParams(search);
         
         dispatch(clearData());
         dispatch(fetchBooksTC(bookstoreService, search));
         dispatch(onFirstSearch(search));
     };
 
-    const match = useMatch('/:id');
-
     useEffect(() => {
-        if (booksLoaded.length > 0 && !match) {
+        if (booksLoaded.length > 0) {
             onSubmit();
         };
     }, [sortBy, category]);
 
     useEffect(() => {
         dispatch(clearSearch());
+        setSearchParams({});
     }, [searchTerm, dispatch]);
 
     const onKeyPress = (e: KeyboardEvent<HTMLFormElement>) => {

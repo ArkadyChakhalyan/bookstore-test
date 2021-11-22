@@ -1,10 +1,12 @@
 import { Loader } from '../loader/loader';
 import { useDispatch, useSelector } from 'react-redux';
-import { StateType } from '../../types';
+import { BookType, StateType } from '../../types';
 import styles from './book-list.module.css';
 import { fetchBooksTC, onContinueSearch } from '../../actions/actions';
 import BookstoreService from '../../services/bookstore-service';
 import { BookListItem } from './book-item/book-list-item';
+import { BookPage } from '../book-page/book-page';
+import { useState } from 'react';
 
 const bookstoreService = new BookstoreService();
 
@@ -37,15 +39,29 @@ export const BookList = () => {
             </button>
         );
 
+    const [book, setBook] = useState(null)
+
+    if (book) {
+        return (
+            <BookPage
+                book={book}
+                goBack={() => setBook(null)} />
+        );
+    }
+
     return (
         <div className={styles.page} >
             <p className={styles.text}><b>{booksFound}</b> books found</p>
             <ul className={styles.list} >
                 {
-                    booksLoaded.map((item) => {
+                    booksLoaded.map((item: BookType) => {
                         return (
-                            <li key={item.id}>
-                                <BookListItem book={item} />
+                            <li key={item.id} >
+                                <BookListItem
+                                    book={item}
+                                    setPage={(book: any) => {
+                                        setBook(book)
+                                    }} />
                             </li>
                         );
                     })
