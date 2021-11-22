@@ -34,7 +34,6 @@ export default class BookstoreService {
         const { searchTerm, sortBy, category, startAt } = search;
         const { getResource, _transformBook } = this;
 
-
         const res = await getResource(searchTerm, sortBy, startAt, category);
         
         return {

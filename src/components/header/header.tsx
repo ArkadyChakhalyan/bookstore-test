@@ -13,7 +13,7 @@ export const Header = () => {
 
     const loading = useSelector((state: StateType) => state.loading);
     const booksLoaded = useSelector((state: StateType) => state.books.booksLoaded);
-
+    
     const dispatch = useDispatch();
     
     const [searchTerm, setSearchTerm] = useState('');
